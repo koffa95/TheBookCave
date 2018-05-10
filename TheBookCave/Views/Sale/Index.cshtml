@@ -1,0 +1,13 @@
+@model List<TheBookCave.Models.ViewModels.SaleListViewModel>
+
+<div>
+    @foreach(var sale in @Model)
+    {
+        <div>
+            <p>@sale.title</p>
+            <p>@sale.author</p>
+            <p>@sale.price</p>
+            <p>@sale.oldPrice</p>
+        </div>
+    }
+</div>

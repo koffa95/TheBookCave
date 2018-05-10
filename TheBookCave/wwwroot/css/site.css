@@ -1,0 +1,208 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #CE6A86;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 1.3cm;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+    color: #D7D7D7;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+.nav.navbar-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+    .navbar-nav {
+        float: none;
+    }
+}
+.nav.navbar-nav > li > a{
+    color: #FF8D61;
+}
+.navbar{
+    background-color: #D7D7D7;
+}
+.navbar > li > a{
+    font-size: medium;
+    color: #FF8D61;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+  
+#map{
+    width: 450px;
+    height: 300px;
+    float: left;
+    border: solid;
+    overflow: hidden;
+    min-height: 100%; 
+    width: auto;
+}
+
+.btn {
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #D7D7D7;
+    color: #FF8D61;
+}
+.btn.active{
+    background-color: #FF8D61;
+    color: #D7D7D7;
+}
+.footer {
+    margin-right: auto;
+    margin-left: auto;
+    color: #FF8D61;
+    background-color: #D7D7D7;
+}
+footer{
+    background-color: #D7D7D7;
+}
+#location, #questions, #openingHours {
+    float: left;
+    border: solid;
+    height: 300px;
+    text-align: center;
+    background-color: #D7D7D7;
+}
+#location {
+    width: 181px;
+}
+#openingHours{
+    width: 210px;
+}
+#questions {
+    width: 140px;
+}
+div > h4 {
+    text-align: center;
+    word-wrap: break-word;
+    flex-wrap: wrap; 
+}
+li {
+    list-style-type: none;
+    text-align: center; 
+    font-size: 14px;
+}
+.links a {
+    color: #FF8D61;
+}
+
+#map > div> img {
+    height: 300px;
+}
+
+div.form {
+    display: block;
+    text-align: center;
+}
+form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    margin-top: 3cm;
+    margin-bottom: 3cm;
+    font-size: large;
+}
+
+.signIn{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.inline{
+    display: inline-block;
+    border: solid;
+    height: 5cm;
+    width: 7.4cm;
+    padding-top: 0.3cm;
+    background-color: #D7D7D7;
+    overflow: hidden;
+}
+.inline > p, a{
+    color: #FF8D61;
+}
+#shortDescription{
+    margin-left: 0.3cm;
+    text-align: center;
+    word-wrap: break-word;
+    flex-wrap: wrap; 
+}
+.glyphicon.glyphicon-shopping-cart{
+    float: right;
+    padding-right: 0.6cm;
+}
+#book-img{
+    margin-left: 0.3cm;
+    margin-right: 0.3cm;
+    width: 1.7cm;
+    float: left;
+    overflow: hidden;
+    width: auto;
+}
+#book-img > img{
+    height: 2.5cm;
+}
+.inline #book-img{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.icon-input-btn input[type="submit"]{
+
+    padding-left: 2em;
+
+}
+.icon-input-btn{
+
+    
+    position: relative;
+    float: right;
+
+}
+
+.icon-input-btn .glyphicon{
+
+    position: absolute;
+    left: 0.65em;
+    top: 30%;
+
+}

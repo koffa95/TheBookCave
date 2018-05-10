@@ -1,0 +1,23 @@
+
+
+@using (Html.BeginForm("signUp", "MyCaveController", FormMethod.Post))
+{
+    <div>
+        <fieldset>
+            <label for="username">Email: </label>
+            <input id="username" type="email" name="username"><br>
+            <label for="password">Password: </label>
+            <input id="password" type="password" name="password"><br>
+            <label for="confirmPassword">Confirm password: </label>
+            <input id="confirmPassword" type="password" name="confirmPassword"><br>
+            <label for="name">Name: </label>
+            <input id="name" type="text" name="name"><br>
+            <label for="socialSecurityNumber">Social Security Number: </label>
+            <input id="socialSecurityNumber" type="text" name="socialSecurityNumber"><br>
+            <label for="phoneNumber">Phone number: </label>
+            <input id="phoneNumber" type="tel" name="phoneNumber"><br>
+            <br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </div>
+}

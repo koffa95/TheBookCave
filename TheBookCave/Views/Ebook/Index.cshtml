@@ -1,0 +1,15 @@
+@model List<TheBookCave.Models.ViewModels.EbookListViewModel>
+
+<div>
+    @foreach(var ebook in @Model)
+    {
+        <div>
+            <p>@ebook.title</p>
+            <p>@ebook.translator</p>
+            <p>@ebook.originalLanguage</p>
+            <p>@ebook.languages</p>
+            <p>@ebook.pages</p>
+            <p>@ebook.price</p>
+        </div>
+    }
+</div>

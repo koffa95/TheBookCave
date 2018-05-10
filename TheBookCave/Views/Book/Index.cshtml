@@ -1,0 +1,46 @@
+@model List<TheBookCave.Models.ViewModels.BookListViewModel>
+
+@{
+    ViewBag.Title = "All Books!";
+}
+<div id="search">
+    <input type="search" name="bookSearch">
+    <label for="orderBy">Order By: </label>
+    <select id="orderBy">
+        <option value="orderName">Order by name</option>
+        <option value="orderAuthor" >Order by author</option>
+        <option value="orderPrice" >Order by price</option>
+    </select>
+    <label for="genre">Genre</label>
+    <select id="genre">
+        <option value="adventure">Adventure</option>
+        <option value="children" >Children's Books</option>
+        <option value="crime" >Crime</option>
+        <option value="fantasy" >Fantasy</option>
+        <option value="fiction" >Fiction</option>
+        <option value="technicalBook" >Technical Books</option>
+        <option value="thriller" >Thrillers</option>
+        <option value="translated">Translated Books</option>
+        <option value="YoungAdult">Young Adult</option>
+    </select>
+</div>
+
+<div id="allBooks">
+    @foreach(var book in @Model)
+    {
+        <div class="inline">
+            <div id="book-img">
+                <img src="@book.image" alt="Book">
+            </div>
+            <p><a asp-area="" asp-controller="Book" asp-action="Index" asp-route-id="@book.bookId">@book.title</a></p>
+
+            <span class="icon-input-btn"><span class="glyphicon glyphicon-shopping-cart"></span> <input type="submit" class="btn btn-default btn-lg cart" value="@book.bookId" id="cart"></span>
+
+            <p><a asp-area="" asp-controller="Author" asp-action="Index" asp-route-id="@book.authorId">@book.author</a></p>
+            <p>Price: @book.price ISK</p>
+            <div class="shortDescription">
+                <p>@book.shortDescription</p>
+            </div>
+        </div>
+    }
+</div>

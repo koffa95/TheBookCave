@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - The Book Cave</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">The Book Cave</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">About Us</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Info">Information</a></li>
+                    <li><a asp-area="" asp-controller="MyCave" asp-action="MyCave">My Cave</a></li>
+                    <li><a asp-area="" asp-controller="MyCave" asp-action="SignIn">Sign In</a></li>
+                    <li><a asp-area="" asp-controller="MyCave" asp-action="SignUp">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        <header>
+            <div class="navbar">
+                <ul class="nav navbar-nav navbar">
+                    <li><a asp-area="" asp-controller="Book" asp-action="BestSellers">Best Sellers</a></li>
+                    <li><a asp-area="" asp-controller="Book" asp-action="Top10"> Top 10 </a></li>
+                    <li><a asp-area="" asp-controller="Book" asp-action="Index">All Books</a></li>
+                    <li><a asp-area="" asp-controller="Book" asp-action="Ebooks">Ebooks</a></li>
+                    <li><a asp-area="" asp-controller="Book" asp-action="AudioBooks">AudioBooks</a></li>
+                    <li><a asp-area="" asp-controller="Book" asp-action="Deals">Deals</a></li>
+                </ul>
+            </div>
+        </header>
+        @RenderBody()
+        <hr />
+        <footer class="footer">
+            <div id="map">
+                <div id="mapL"><img src="~/images/Lagmuli.PNG" alt="Map to Lagmuli"/></div>
+                <div id="mapB" ><img src="~/images/Bankastraeti.PNG" alt="Map to Bankastraeti" /></div>
+                <div id="mapK" ><img src="~/images/kringlan.PNG" alt="Map to Kringlan"/></div>
+                <div id="mapS" ><img src="~/images/Smaralind.PNG" alt="Map to Smaralind"/></div>
+            </div>
+            <div id="location">
+                <h4>Locations:</h4>
+                <button id="location1" class="btn active">Lagmuli 9, 105 Rvk.</button><br>
+                <button id="location2" class="btn">Bankastraeti 0, 101 Rvk.</button><br>
+                <button id="location3" class="btn">Kringlan</button><br>
+                <button id="location4" class="btn">Smaralind</button><br>
+            </div>
+            <div id="openingHours">
+                <ul id="lagmuli">
+                    <h4>Opening Hours: </h4>
+                    <li>Weekdays: 9-18</li>
+                    <li>Saturday: 11-18</li>
+                    <li>Sunday: 12-16</li>
+                </ul>
+                <ul id="bankastraeti">
+                    <h4>Opening Hours: </h4>
+                    <li>Weekdays: 9-22</li>
+                    <li>Saturday: 10-22</li>
+                    <li>Sunday: 10-22</li>
+                </ul>
+                <ul id="kringlan">
+                    <h4>Opening Hours: </h4>
+                    <li>Monday: 10-18:30</li>
+                    <li>Tuesday: 10-18:30</li>
+                    <li>Wednesday: 10-18:30</li>
+                    <li>Thursday: 10-21</li>
+                    <li>Friday: 10-19</li>
+                    <li>Saturday: 10-18</li>
+                    <li>Sunday: 13-18</li>
+                </ul>
+                <ul id="smaralind">
+                    <h4>Opening Hours: </h4>
+                    <li>Monday: 10-19</li>
+                    <li>Tuesday: 10-19</li>
+                    <li>Wednesday: 10-19</li>
+                    <li>Thursday: 11-21</li>
+                    <li>Friday: 11-19</li>
+                    <li>Saturday: 11-18</li>
+                    <li>Sunday: 13-18</li>
+                </ul>
+            </div>
+            <div id="questions">
+                <ul class="links">
+                    <h4>Most visited</h4>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">About Us</a></li><br>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a></li><br>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Info">Information</a></li><br>
+                    <li><a asp-area="" asp-controller="Home" asp-action="MyCave">My Cave</a></li><br>
+                    <li><a asp-area="" asp-controller="Home" asp-action="MyCave">My Cave</a></li><br>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

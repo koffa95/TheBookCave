@@ -1,0 +1,16 @@
+@model List<TheBookCave.Models.ViewModels.AudiobookListViewModel>
+
+<div>
+    @foreach(var audiobook in @Model)
+    {
+        <div>
+            <p>@audiobook.title</p>
+            <p>@audiobook.translator</p>
+            <p>@audiobook.narrator</p>
+            <p>@audiobook.originalLanguage</p>
+            <p>@audiobook.language</p>
+            <p>@audiobook.booklength</p>
+            <p>@audiobook.price</p>
+        </div>
+    }
+</div>

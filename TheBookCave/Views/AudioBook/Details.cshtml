@@ -1,0 +1,26 @@
+@model List<TheBookCave.Models.ViewModels.AudiobookListViewModel>
+@{
+    ViewBag.class = "Audiobook";
+}
+<div>
+    @foreach(var audiobook in @Model)
+    {
+        <h2>@audiobook.title</h2>
+        <div id="image">
+            <img src="@audiobook.image" alt="AudioBook">
+        </div>
+        <div id="aboutAudiobook">
+            <h4>aboutAudiobook: </h4>
+            <p>Translator: @audiobook.translator</p>
+            <p>Narrator: @audiobook.narrator</p>
+            <p>Original language: @audiobook.originalLanguage</p>
+            <p>language: @audiobook.language</p>
+            <p>Booklength: @audiobook.booklength</p>
+            <p>Price: @audiobook.price</p>
+            <div class="shortDescription">
+                <p>Description:</p>
+                <p>@author.shortDescription</p>
+            </div>
+        </div>
+    }
+</div>

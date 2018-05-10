@@ -1,0 +1,15 @@
+@model List<TheBookCave.Models.ViewModels.Topp10ViewModel>
+
+<div>
+    @foreach(var topp10 in @Model)
+    {
+        <div>
+            <p>@topp10.title</p>
+            <p>@topp10.translator</p>
+            <p>@topp10.originalLanguage</p>
+            <p>@topp10.language</p>
+            <p>@topp10.pages</p>
+            <p>@topp10.price</p>
+        </div>
+    }
+</div>

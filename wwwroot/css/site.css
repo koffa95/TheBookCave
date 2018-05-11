@@ -241,3 +241,21 @@ div.form {
     border-color: #FF8D61;
     margin-bottom: 0.5cm;
 }
+
+#CartCheckOut
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #CE6A86;
+    border: solid;
+    border-color: #D7D7D7;
+}
+
+.button
+{
+    background-color: #D7D7D7;
+    border: solid;
+    border: #FF8D61;
+}

@@ -34,7 +34,6 @@ namespace TheBookCave.Repositories
                               image = b.image,
                               shortDescription = b.shortDescription
                          }).ToList();
-
             return books;
         }
     }

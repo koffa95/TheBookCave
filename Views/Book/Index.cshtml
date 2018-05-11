@@ -11,11 +11,12 @@
     }
     <label for="orderBy">Order By: </label>
     <select id="orderBy" name="orderBy">
-        <option value="orderName">Order by name</option>
-        <option value="orderAuthor" >Order by author</option>
+        <option value="orderName"><a asp-area="" asp-controller="Book" asp-action="Filter/1" >Order by name</a></option>
+        <option value="orderAuthor"><a asp-area="" asp-controller="Book" asp-action="Filter/2" >Order by author</a></option>
         <option value="orderPrice" >Order by price</option>
     </select>
-    <button id="order">Order</button>
+    <a id="order" class="button" href="/Book/Filter?filter=1">Order</a>
+
     <label for="genre">Genre</label>
     <select id="genre" name="genre">
         <option value="adventure">Adventure</option>
@@ -29,7 +30,7 @@
         <option value="translated">Translated Books</option>
         <option value="youngAdult">Young Adult</option>
     </select>
-    <button type="submit" value="filter" id="filter">Filter</button>
+    <a id="filter" class="button" href="/Book/FilterGenre?filter=1">Filter</a>
 </div>
 
 <div id="allBooks">

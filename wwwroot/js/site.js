@@ -153,31 +153,70 @@ $(".trash").click(function() {
         }
     });
 });
-$("#order").click(function() {
-
-    console.log("working");
-
+$("#orderBy").change(function(e) {
     var input, filter;
     input = $('#orderBy').val();
-    if(input == orderName)
+    if(input == "orderName")
     {
         filter = 1;
     }
-    else if(input == orderAuthor)
+    else if(input == "orderAuthor")
     {
         filter = 2;
     }
     else{
         filter = 3;
     }
-    $.ajax({
-        url: '/Book/Filter',
-        type: 'GET',    
-        dataType: 'json',
-        data: { filter },
-        error: function () {
-            alert('error');
-        }
-    });
 
+    $("#order").attr("href","/Book/Filter?filter="+filter);
+});
+
+$("#filter").change(function() {
+    var input, filter;
+    input = $('#genre').val();
+    if(input == "adventure")
+    {
+        filter = 1;
+    }
+    else if(input == "children")
+    {
+        filter = 2;
+    }
+    else if(input == "crime")
+    {
+        filter = 3;
+    }
+    else if(input == "fantasy")
+    {
+        filter = 4;
+    }
+    else if(input == "fiction")
+    {
+        filter = 5;
+    }
+    else if(input == "fun")
+    {
+        filter = 6;
+    }
+    else if(input == "technicalBook")
+    {
+        filter = 7;
+    }
+    else if(input == "thriller")
+    {
+        filter = 8;
+    }
+    else if(input == "translated")
+    {
+        filter = 9;
+    }
+    else if(input == "youngAdult")
+    {
+        filter = 10;
+    }
+    else{
+        filter = 0;
+    }
+
+    $("#filter").attr("href","/Book/FilterGenre?filter="+filter);
 });

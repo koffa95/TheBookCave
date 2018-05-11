@@ -4,15 +4,16 @@
     ViewBag.Title = "All Books!";
 }
 <div id="search">
-    <input type="search" name="bookSearch">
+    <label for="search">Search by title</label>
+    <input type="search" name="bookSearch" id="search">
     <label for="orderBy">Order By: </label>
-    <select id="orderBy">
+    <select id="orderBy" name="orderBy">
         <option value="orderName">Order by name</option>
         <option value="orderAuthor" >Order by author</option>
         <option value="orderPrice" >Order by price</option>
     </select>
     <label for="genre">Genre</label>
-    <select id="genre">
+    <select id="genre" name="genre">
         <option value="adventure">Adventure</option>
         <option value="children" >Children's Books</option>
         <option value="crime" >Crime</option>
@@ -23,6 +24,7 @@
         <option value="translated">Translated Books</option>
         <option value="YoungAdult">Young Adult</option>
     </select>
+    <input type="submit" value="search">
 </div>
 
 <div id="allBooks">

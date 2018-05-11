@@ -61,6 +61,7 @@ namespace TheBookCave.Controllers
             else{
                 model = model.OrderBy(x => x.price).ToList();
             }
+            
             return View(model);
         }
     }

@@ -52,10 +52,11 @@ namespace TheBookCave.Controllers
             return this.Json(new { success = true });
             
         }
-        public IActionResult cartview()
+        public IActionResult Cart()
         {
             return View();
         }
+       
         public IActionResult SignIn()
         {
             return View();

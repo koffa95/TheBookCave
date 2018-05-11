@@ -1,0 +1,19 @@
+@model List<TheBookCave.Models.ViewModels.CartViewModel>
+
+@{
+    ViewBag.Title = "Cart";
+}
+
+<p>Cart</p>
+
+
+<div>
+    @foreach(var cart in @Model)
+    {
+        <div>
+            <p>@cart.id</p>
+            //<p>@cart.bookId</p>
+            
+        </div>
+    }
+</div>

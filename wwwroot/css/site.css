@@ -165,7 +165,7 @@ div.form {
     word-wrap: break-word;
     flex-wrap: wrap; 
 }
-.glyphicon.glyphicon-shopping-cart{
+span .glyphicon.glyphicon-shopping-cart{
     float: right;
     padding-right: 0.6cm;
 }
@@ -289,3 +289,19 @@ div.form {
     border-color: #FF8D61;
 }
 
+button.glyphicon {
+    align-content: center;
+    text-align: center;
+    height: 1cm;
+    border: solid;
+    border-color: #FF8D61;
+    color: #FF8D61;
+}
+.info {
+    align-content: center;
+    text-align: center;
+    border: solid;
+    background-color: #D7D7D7;
+    border-color: #FF8D61;
+    font-size: 20pt;
+}

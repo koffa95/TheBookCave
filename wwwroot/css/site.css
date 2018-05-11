@@ -130,7 +130,7 @@ div.form {
     display: block;
     text-align: center;
 }
-form {
+.form > form {
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -204,19 +204,8 @@ form {
     bottom: 1em;
 }
 
-#search{
-    background-color: #D7D7D7;
-    border-radius: 5px;
-    height: 1cm;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 1cm;
-}
-#search * {
-    margin: 5px, 5px;
-    display: inline-block;
-}
+
+
 #cartView {
     margin: 2cm;
 }
@@ -241,4 +230,14 @@ form {
 .icon-input-btn.trash , .glyphicon-trash {
     padding-right: 0.7cm;
     padding-top: 1cm;
+}
+#search-filters > form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    background-color: #D7D7D7;
+    border: solid;
+    border-color: #FF8D61;
+    margin-bottom: 0.5cm;
 }

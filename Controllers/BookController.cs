@@ -34,7 +34,7 @@ namespace TheBookCave.Controllers
             return View("NotFound");
         }
         [HttpGet]
-        public IActionResult Search(string SearchText)
+        public IActionResult Index(string SearchText)
         {
 
             var model = _bookService.GetAllBooks();
@@ -43,6 +43,23 @@ namespace TheBookCave.Controllers
                 var result = model.Where
                 (m => m.title.IndexOf(SearchText, System.StringComparison.CurrentCultureIgnoreCase) != -1);
                 return View(result.ToList());
+            }
+            return View(model);
+        }
+        [HttpGet]
+        public IActionResult Filter(int filter)
+        {
+            var model = _bookService.GetAllBooks();
+            if(filter == 1)
+            {
+                model = model.OrderBy(x => x.title).ToList();
+            }
+            else if(filter == 2)
+            {
+                model = model.OrderBy(x => x.author).ToList();
+            }
+            else{
+                model = model.OrderBy(x => x.price).ToList();
             }
             return View(model);
         }

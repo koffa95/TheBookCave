@@ -4,15 +4,18 @@
     ViewBag.Title = "Cart";
 }
 
-<p>Cart</p>
 
-
-<div>
+<div id="cartView">
     @foreach(var cart in @Model)
     {
-        <div>
-            <p>@cart.id</p>
-            //<p>@cart.bookId</p>
+        <div class="itemInCart">
+            <div id="book-img">
+                <img src="@cart.book.image" alt="Book">
+            </div>
+            <p><a asp-area="" asp-controller="Book" asp-action="Index" asp-route-id="@cart.book.id">@cart.book.title</a></p>
+            <p>@cart.book.price</p>
+            
+            <span class="icon-input-btn trash"><span class="glyphicon glyphicon-trash"></span> <input type="submit" class="btn btn-default btn-lg trash" value="" name="@cart.book.id" id="trash"></span>
             
         </div>
     }

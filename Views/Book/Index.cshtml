@@ -19,10 +19,11 @@
         <option value="crime" >Crime</option>
         <option value="fantasy" >Fantasy</option>
         <option value="fiction" >Fiction</option>
+        <option value="fun">Fun</option>
         <option value="technicalBook" >Technical Books</option>
         <option value="thriller" >Thrillers</option>
         <option value="translated">Translated Books</option>
-        <option value="YoungAdult">Young Adult</option>
+        <option value="youngAdult">Young Adult</option>
     </select>
     <input type="submit" value="search">
 </div>
@@ -36,7 +37,7 @@
             </div>
             <p><a asp-area="" asp-controller="Book" asp-action="Index" asp-route-id="@book.bookId">@book.title</a></p>
 
-            <span class="icon-input-btn"><span class="glyphicon glyphicon-shopping-cart"></span> <input type="submit" class="btn btn-default btn-lg cart" value="@book.bookId" id="cart"></span>
+            <span class="icon-input-btn"><span class="glyphicon glyphicon-shopping-cart"></span> <input type="submit" class="btn btn-default btn-lg cart" name="@book.bookId" value="" id="cart"></span>
 
             <p><a asp-area="" asp-controller="Author" asp-action="Index" asp-route-id="@book.authorId">@book.author</a></p>
             <p>Price: @book.price ISK</p>

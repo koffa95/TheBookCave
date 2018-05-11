@@ -14,10 +14,10 @@ namespace TheBookCave.Controllers
 {
     public class MyCaveController : Controller
     {
-        //private CartService _cartService;
+        private CartService _cartService;
         public MyCaveController()
         {
-            //_cartService = new CartService();
+            _cartService = new CartService();
         }
        [HttpPost]
         public ActionResult AddToCart(int bookId)
@@ -54,7 +54,8 @@ namespace TheBookCave.Controllers
         }
         public IActionResult Cart()
         {
-            return View();
+            var cart = _cartService.GetCart();
+            return View(cart);
         }
        
         public IActionResult SignIn()

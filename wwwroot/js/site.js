@@ -155,6 +155,8 @@ $(".trash").click(function() {
 });
 $("#order").click(function() {
 
+    console.log("working");
+
     var input, filter;
     input = $('#orderBy').val();
     if(input == orderName)

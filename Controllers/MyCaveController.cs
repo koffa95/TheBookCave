@@ -55,7 +55,7 @@ namespace TheBookCave.Controllers
 
             db.Cart.RemoveRange();
             db.SaveChanges();
-            return this.Json(new { success = true });
+            return RedirectToAction("Cart", "MyCave" );
             
         }
         public IActionResult Cart()

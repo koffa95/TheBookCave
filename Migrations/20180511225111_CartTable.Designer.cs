@@ -12,8 +12,8 @@ using TheBookCave.Data;
 namespace TheBookCave.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20180510165539_initialMigration")]
-    partial class initialMigration
+    [Migration("20180511225111_CartTable")]
+    partial class CartTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -82,6 +82,20 @@ namespace TheBookCave.Migrations
                     b.ToTable("Books");
                 });
 
+            modelBuilder.Entity("TheBookCave.Data.EntityModels.Cart", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("bookId");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("bookId");
+
+                    b.ToTable("Cart");
+                });
+
             modelBuilder.Entity("TheBookCave.Data.EntityModels.User", b =>
                 {
                     b.Property<int>("id")
@@ -120,6 +134,13 @@ namespace TheBookCave.Migrations
                     b.HasDiscriminator().HasValue("Customer");
                 });
 
+            modelBuilder.Entity("TheBookCave.Data.EntityModels.Cart", b =>
+                {
+                    b.HasOne("TheBookCave.Data.EntityModels.Book", "book")
+                        .WithMany()
+                        .HasForeignKey("bookId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
 #pragma warning restore 612, 618
         }
     }

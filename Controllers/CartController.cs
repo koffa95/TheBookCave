@@ -55,5 +55,6 @@ namespace TheBookCave.Controllers
             var cart = _cartService.GetCart();
             return View(cart);
         }
+        //Function does not work.
     }
 }

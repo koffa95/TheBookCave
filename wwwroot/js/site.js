@@ -140,18 +140,8 @@ $(".cart").click(function() {
 $(".trash").click(function() {
     
     var bookId = parseInt(this.name);
-    $.ajax({
-        url: '/Cart/RemoveFromCart',
-        type: 'POST',    
-        dataType: 'json',
-        data: { bookId },
-        success: function (data) {
-            alert("Item has been removed from Cart");
-        },
-        error: function () {
-            alert('error');
-        }
-    });
+    var bookId = bookId;
+    $(".trash").attr("href","/Cart/RemoveFromCart?bookId="+bookId);
 });
 $("#orderBy").change(function(e) {
     var input, filter;

@@ -255,10 +255,13 @@ span .glyphicon.glyphicon-shopping-cart{
 
 .button
 {
-    background-color: #D7D7D7;
-    color: #333333;
-    padding: 2px 6px 2px 6px;
-    border: solid, #FF8D61;
+    background-color: rgb(241, 238, 238);
+    padding: 6px 6px 2px 6px;
+    border: solid;
+    align-content: center;
+    border: solid;
+    border-color: #FF8D61;
+    color: #FF8D61;
 
 }
 
@@ -284,7 +287,7 @@ span .glyphicon.glyphicon-shopping-cart{
 .details{
     margin-top: 1cm;
     text-align: center;
-    background-color: #D7D7D7;
+    background-color: rgb(236, 232, 232);
     border: solid;
     border-color: #FF8D61;
 }
@@ -304,4 +307,26 @@ button.glyphicon {
     background-color: #D7D7D7;
     border-color: #FF8D61;
     font-size: 20pt;
+}
+#cart-btns{
+    display: flex;
+    justify-content: center;
+}
+
+#reset, #checkout{
+
+    align-content: center;
+    text-align: center;
+    height: 1cm;
+    border: solid;
+    border-color: #FF8D61;
+    color: #FF8D61;
+}
+#reset {
+    margin-right: 1cm;
+}
+
+input#trash {
+    height: 1cm;
+    width: 1cm;
 }

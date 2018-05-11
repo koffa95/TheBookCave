@@ -30,8 +30,12 @@ namespace TheBookCave.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
+            if(!ModelState.IsValid)
+            {
+                ViewData["ErrorMessage"]="Error";
+                return View();
+            }
             _userService.processUser(model);
-            if(!ModelState.IsValid) {return View();}
             var user = new ApplicationUser {UserName = model.username, Email = model.username};
             var result = await _userManager.CreateAsync(user, model.password);
             if(result.Succeeded)
@@ -52,7 +56,12 @@ namespace TheBookCave.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> LogIn(LogInViewModel model)
         {
-            if(!ModelState.IsValid) {return View();}
+            if(!ModelState.IsValid)
+            {
+                ViewData["ErrorMessage"]="Error";
+                return View();
+            }
+            _userService.processLogIn(model);
             var result = await _signInManager.PasswordSignInAsync(model.username, model.password, model.rememberMe, false);
             
             if(result.Succeeded)

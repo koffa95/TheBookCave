@@ -9,6 +9,9 @@ namespace TheBookCave.Models.ViewModels
         public string username { get; set; }
         [Required (ErrorMessage="Password is required")]
         public string password { get; set; }
+        [Required]
+        [Compare("password", ErrorMessage="Password doesn't match")]
+        public string confirmPassword { get; set; }
         public bool staff { get; set; }
         [Required]
         public int userId { get; set; }

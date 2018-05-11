@@ -17,7 +17,11 @@ namespace TheBookCave.Services
             var users = _userRepo.GetAllUsers();
             return users; 
         }
-
+        public void processLogIn(LogInViewModel user)
+        {
+            if(string.IsNullOrEmpty(user.username)) { throw new Exception("Email is missing"); }
+            if(string.IsNullOrEmpty(user.password)) { throw new Exception("Password is missing"); }
+        }
         public void processUser(RegisterViewModel user)
         {
             if(string.IsNullOrEmpty(user.username)) { throw new Exception("Email is missing"); }

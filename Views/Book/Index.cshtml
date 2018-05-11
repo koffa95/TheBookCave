@@ -9,14 +9,17 @@
         @Html.TextBox("SearchText")
         <input type="submit" value="Search!" class="search-button" />
     }
+</div>
+<div id="filters">
     <label for="orderBy">Order By: </label>
     <select id="orderBy" name="orderBy">
-        <option value="orderName"><a asp-area="" asp-controller="Book" asp-action="Filter/1" >Order by name</a></option>
-        <option value="orderAuthor"><a asp-area="" asp-controller="Book" asp-action="Filter/2" >Order by author</a></option>
+        <option value="orderName">Order by name</option>
+        <option value="orderAuthor">Order by author</option>
         <option value="orderPrice" >Order by price</option>
     </select>
     <a id="order" class="button" href="/Book/Filter?filter=1">Order</a>
-
+</div>
+<div id="filters">
     <label for="genre">Genre</label>
     <select id="genre" name="genre">
         <option value="adventure">Adventure</option>
@@ -40,11 +43,11 @@
             <div id="book-img">
                 <img src="@book.image" alt="Book">
             </div>
-            <p><a asp-area="" asp-controller="Book" asp-action="Index" asp-route-id="@book.bookId">@book.title</a></p>
+            <p><a asp-area="" asp-controller="Book" asp-action="Details" asp-route-id="@book.bookId">@book.title</a></p>
 
             <span class="icon-input-btn"><span class="glyphicon glyphicon-shopping-cart"></span> <input type="submit" class="btn btn-default btn-lg cart" name="@book.bookId" value="" id="cart"></span>
 
-            <p><a asp-area="" asp-controller="Author" asp-action="Index" asp-route-id="@book.authorId">@book.author</a></p>
+            <p><a asp-area="" asp-controller="Author" asp-action="Details" asp-route-id="@book.authorId">@book.author</a></p>
             <p>Price: @book.price ISK</p>
             <div class="shortDescription">
                 <p>@book.shortDescription</p>

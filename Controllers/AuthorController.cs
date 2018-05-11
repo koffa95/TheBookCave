@@ -21,15 +21,13 @@ namespace TheBookCave.Controllers
         public IActionResult Details(int id)
         {
             var author = _authorService.GetAllAuthors();
-            if(id <= author.Count && id < 0)
-            {
+            
                 var clickedAuthor = author.Where(h => h.authorId == id);
                 if(clickedAuthor != null)
                 {
                     return View(clickedAuthor.ToList());
                 }
-            }
-            return View("NotFound");
+                return View(clickedAuthor.ToList());
         }
     }
 }

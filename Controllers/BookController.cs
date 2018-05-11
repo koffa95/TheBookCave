@@ -25,13 +25,13 @@ namespace TheBookCave.Controllers
             var model = _bookService.GetAllBooks();
             if(id <= model.Count && id > 0)
             {
-                var clickedBook = model.Where(h => h.bookId == id);
+                var clickedBook = model.Where(h => h.bookId == id).ToList();
                 if(clickedBook != null)
                 {
-                    return View(clickedBook.ToList());
+                    return View(clickedBook);
                 }
             }
-            return View("NotFound");
+            return RedirectToAction("Index");
         }
         [HttpGet]
         public ActionResult Index(string SearchText)
@@ -63,6 +63,7 @@ namespace TheBookCave.Controllers
 
             return View("Index", model);
         }
+         [HttpGet]
         public ActionResult FilterGenre([FromQuery] int filter)
         {
             var model = _bookService.GetAllBooks();

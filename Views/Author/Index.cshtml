@@ -1,10 +1,9 @@
 @model List<TheBookCave.Models.ViewModels.AuthorListViewModel>
 
-<div>
+<div id="authorList">
     @foreach(var author in @Model)
     {
-        <div>
-            <p>@author.name</p>
-        </div>
+        <hr>
+            <p><a asp-area="" asp-controller="Author" asp-action="Details" asp-route-id="@author.authorId" > @author.name </a></p>
     }
 </div>

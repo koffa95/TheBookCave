@@ -171,7 +171,7 @@ $("#orderBy").change(function(e) {
     $("#order").attr("href","/Book/Filter?filter="+filter);
 });
 
-$("#filter").change(function() {
+$("#genre").change(function() {
     var input, filter;
     input = $('#genre').val();
     if(input == "adventure")

@@ -1,20 +1,19 @@
 @model List<TheBookCave.Models.ViewModels.BookListViewModel>
 @{
-    ViewBag.class = "book";
+    ViewBag.Title = "book";
 }
-<div>
+<div class="detailsDiv">
     @foreach(var book in @Model)
     {
-        <h4>@book.title</h4>
+        <h1>@book.title</h1>
         <div id="image">
             <img src="@book.image" alt="Book">
-        <div>
+        </div>
+        <div class="details">
             <p>pages: @book.pages</p>
             <p>price: @book.price</p>
-            <div class="shortDescription">
-                <p>Description:</p>
-                <p>@book.shortDescription</p>
-            </div>
+            <p>Description:</p>
+            <p>@book.shortDescription</p>
         </div>
     }
 </div>

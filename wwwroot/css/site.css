@@ -256,6 +256,36 @@ div.form {
 .button
 {
     background-color: #D7D7D7;
-    border: solid;
-    border: #FF8D61;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border: solid, #FF8D61;
+
 }
+
+#detailsDiv{
+    background-color: #D7D7D7;
+    border: solid, #FF8D61;
+    margin-bottom: 1cm;
+}
+
+.detailsDiv a{
+    align-content: center;
+    padding-left: 10%;
+}
+.detailsDiv h1{
+    text-align: center;
+}
+#image img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.details{
+    margin-top: 1cm;
+    text-align: center;
+    background-color: #D7D7D7;
+    border: solid;
+    border-color: #FF8D61;
+}
+

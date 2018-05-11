@@ -19,39 +19,37 @@ namespace TheBookCave.Controllers
             _userManager = userManager;
         }
         [HttpGet]
-        public IActionResult SignUp()
+        public IActionResult Register()
         {
             return View();
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SignUp(RegisterViewModel _register)
+        public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if(!ModelState.IsValid) {return View();}
-            var user = new ApplicationUser { UserName = _register.username};
-            var result = await _userManager.CreateAsync(user, _register.password);
-            if(!result.Succeeded)
+            var user = new ApplicationUser {UserName = model.username, Email = model.username};
+            var result = await _userManager.CreateAsync(user, model.password);
+            if(result.Succeeded)
             {
-                await _userManager.AddClaimAsync(user, new Claim("Name", "_register.name"));
+                //await _userManager.AddClaimAsync(user, new Claim("Name", "model.name"));
                 await _signInManager.SignInAsync(user, false);
 
                 return RedirectToAction("Index", "Home");
             }
             return View();
         }
-
-        public IActionResult SignIn()
+        [HttpGet]
+        public IActionResult LogIn()
         {
             return View();
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SignIn(LogInViewModel model)
+        public async Task<IActionResult> LogIn(LogInViewModel model)
         {
             if(!ModelState.IsValid) {return View();}
-            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+            var result = await _signInManager.PasswordSignInAsync(model.username, model.password, model.rememberMe, false);
             
             if(result.Succeeded)
             {

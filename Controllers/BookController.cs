@@ -33,5 +33,18 @@ namespace TheBookCave.Controllers
             }
             return View("NotFound");
         }
+        [HttpGet]
+        public IActionResult Search(string SearchText)
+        {
+
+            var model = _bookService.GetAllBooks();
+            if(!string.IsNullOrEmpty(SearchText))
+            {
+                var result = model.Where
+                (m => m.title.IndexOf(SearchText, System.StringComparison.CurrentCultureIgnoreCase) != -1);
+                return View(result.ToList());
+            }
+            return View(model);
+        }
     }
 }    

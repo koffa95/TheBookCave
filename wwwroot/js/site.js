@@ -125,7 +125,7 @@ $(".cart").click(function() {
     
     var bookId = parseInt(this.name);
     $.ajax({
-        url: '/MyCave/AddToCart',
+        url: '/Cart/AddToCart',
         type: 'POST',    
         dataType: 'json',
         data: { bookId },
@@ -141,7 +141,7 @@ $(".trash").click(function() {
     
     var bookId = parseInt(this.name);
     $.ajax({
-        url: '/MyCave/RemoveFromCart',
+        url: '/Cart/RemoveFromCart',
         type: 'POST',    
         dataType: 'json',
         data: { bookId },

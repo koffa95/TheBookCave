@@ -8,7 +8,7 @@ namespace TheBookCave.Controllers
     public class CartController : Controller
     {
         private CartService _cartService;
-        public MyCaveController()
+        public CartController()
         {
             _cartService = new CartService();
         }
@@ -46,6 +46,11 @@ namespace TheBookCave.Controllers
             
         }
         public IActionResult Cart()
+        {
+            var cart = _cartService.GetCart();
+            return View(cart);
+        }
+        public IActionResult CheckOut()
         {
             var cart = _cartService.GetCart();
             return View(cart);

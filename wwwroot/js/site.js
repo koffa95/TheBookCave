@@ -156,6 +156,6 @@ $(".glyphicon-trash").click(function() {
         }
     });
 });
-¢(".search").click(function() {
+$(".search").click(function() {
     var 
-}
+})

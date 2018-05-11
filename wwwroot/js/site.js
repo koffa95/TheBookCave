@@ -140,7 +140,7 @@ $(".cart").click(function() {
         }
     });
 });
-$(".glyphicon-trash").click(function() {
+$(".trash").click(function() {
     
     var bookId = parseInt(this.name);
     $.ajax({

@@ -218,4 +218,21 @@ form {
 #search * {
     margin: 5px, 5px;
 }
-
+#cartView {
+    margin: 2cm;
+}
+.itemInCart{
+    background-color: #D7D7D7;
+    border: solid;
+    border-color: #FF8D61;
+    height: 3.2cm;
+}
+.itemInCart #book-img{
+    padding-top: 10px;
+}
+.itemInCart p{
+    padding-top: 20px;
+}
+.trash{
+    justify-content: center;
+}

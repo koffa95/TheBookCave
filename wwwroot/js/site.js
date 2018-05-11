@@ -126,7 +126,7 @@ $( "#location4" ).click(function() {
 
 $(".cart").click(function() {
     
-    var bookId = parseInt(this.value);
+    var bookId = parseInt(this.name);
     $.ajax({
         url: '/MyCave/AddToCart',
         type: 'POST',    
@@ -140,9 +140,9 @@ $(".cart").click(function() {
         }
     });
 });
-$(".rmv-cart").click(function() {
+$(".glyphicon-trash").click(function() {
     
-    var bookId = parseInt(this.value);
+    var bookId = parseInt(this.name);
     $.ajax({
         url: '/MyCave/RemoveFromCart',
         type: 'POST',    

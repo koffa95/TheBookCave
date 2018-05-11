@@ -18,15 +18,15 @@ namespace TheBookCave.Controllers
             _signInManager = signInManager;
             _userManager = userManager;
         }
-
-        public IActionResult Register()
+        [HttpGet]
+        public IActionResult SignUp()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(RegisterViewModel _register)
+        public async Task<IActionResult> SignUp(RegisterViewModel _register)
         {
             if(!ModelState.IsValid) {return View();}
             var user = new ApplicationUser { UserName = _register.username};
@@ -38,6 +38,39 @@ namespace TheBookCave.Controllers
 
                 return RedirectToAction("Index", "Home");
             }
+            return View();
+        }
+
+        public IActionResult SignIn()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SignIn(LogInViewModel model)
+        {
+            if(!ModelState.IsValid) {return View();}
+            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+            
+            if(result.Succeeded)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SignOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login", "Account");
+        }
+
+        public IActionResult AccessDenied()
+        {
             return View();
         }
     }

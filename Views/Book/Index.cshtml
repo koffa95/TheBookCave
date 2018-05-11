@@ -4,7 +4,7 @@
     ViewBag.Title = "All Books!";
 }
 <div id="search-filters">
-    @using (Html.BeginForm("Search", "Book", FormMethod.Get))
+    @using (Html.BeginForm("Index", "Book", FormMethod.Get))
     {
         @Html.TextBox("SearchText")
         <input type="submit" value="Search!" class="search-button" />
@@ -15,6 +15,7 @@
         <option value="orderAuthor" >Order by author</option>
         <option value="orderPrice" >Order by price</option>
     </select>
+    <button id="order">Order</button>
     <label for="genre">Genre</label>
     <select id="genre" name="genre">
         <option value="adventure">Adventure</option>
@@ -28,7 +29,7 @@
         <option value="translated">Translated Books</option>
         <option value="youngAdult">Young Adult</option>
     </select>
-    <input type="submit" value="filter" id="filter">
+    <button type="submit" value="filter" id="filter">Filter</button>
 </div>
 
 <div id="allBooks">

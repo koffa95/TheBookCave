@@ -153,6 +153,29 @@ $(".trash").click(function() {
         }
     });
 });
-$("#filter").click(function() {
-    //if()
+$("#order").click(function() {
+
+    var input, filter;
+    input = $('#orderBy').val();
+    if(input == orderName)
+    {
+        filter = 1;
+    }
+    else if(input == orderAuthor)
+    {
+        filter = 2;
+    }
+    else{
+        filter = 3;
+    }
+    $.ajax({
+        url: '/Book/Filter',
+        type: 'GET',    
+        dataType: 'json',
+        data: { filter },
+        error: function () {
+            alert('error');
+        }
+    });
+
 });

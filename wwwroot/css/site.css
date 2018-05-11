@@ -188,16 +188,11 @@ form {
 }
 
 .icon-input-btn input[type="submit"]{
-
     padding-left: 2em;
-
 }
 .icon-input-btn{
-
-    
     position: relative;
     float: right;
-
 }
 
 .icon-input-btn .glyphicon{

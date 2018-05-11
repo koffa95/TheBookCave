@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TheBookCave.Data;
 using TheBookCave.Models;
+using TheBookCave.Services;
 
 namespace TheBookCave
 {
@@ -45,6 +46,7 @@ namespace TheBookCave
                 options.AccessDeniedPath = "/MyCave/AccessDenied";
                 options.SlidingExpiration = true;
             });
+            services.AddTransient<IUserService, UserService>();
             services.AddMvc();
         }
 

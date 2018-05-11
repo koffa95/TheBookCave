@@ -18,15 +18,15 @@ namespace TheBookCave.Controllers
             _signInManager = signInManager;
             _userManager = userManager;
         }
-
-        public IActionResult Register()
+        [HttpGet]
+        public IActionResult SignUp()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(RegisterViewModel _register)
+        public async Task<IActionResult> SignUp(RegisterViewModel _register)
         {
             if(!ModelState.IsValid) {return View();}
             var user = new ApplicationUser { UserName = _register.username};

@@ -4,19 +4,34 @@
     <h2>Register</h2>
     <form asp-action="Register" asp-controller="Account" class="form-horizontal">
         <div class="form-group">
-            <input type="email" asp-for="username" class="form-control" placeholder="Enter email.." />
+            <label for="username">Email: </label>
+            <input type="email" asp-for="username" class="form-control" placeholder="Enter email" />
+            <span asp-validation-for="username" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <input type="password" asp-for="password" class="form-control" placeholder="Enter password.." />
+            <label for="password">Password: </label>
+            <input type="password" asp-for="password" class="form-control" placeholder="Enter password" />
+            <span asp-validation-for="password" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <input type="text" asp-for="name" class="form-control" placeholder="Enter full name.." />
+            <label for="confirmPassword">Confirm password: </label>
+            <input type="password" asp-for="confirmPassword" class="form-control" placeholder="Confirm password" />
+            <span asp-validation-for="confirmPassword" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <input type="text" asp-for="socialSecurityNumber" class="form-control" placeholder="Enter social security number.." />
+            <label for="name">Name: </label>
+            <input type="text" asp-for="name" class="form-control" placeholder="Enter full name" />
+            <span asp-validation-for="name" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <input type="tel" asp-for="phoneNumber" class="form-control" placeholder="Enter phone number.." />
+            <label for="socialSecurityNumber">Social security number: </label>
+            <input type="text" asp-for="socialSecurityNumber" class="form-control" placeholder="Enter social security number" />
+            <span asp-validation-for="socialSecurityNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone number: </label>
+            <input type="tel" asp-for="phoneNumber" class="form-control" placeholder="Enter phone number" />
+            <span asp-validation-for="phoneNumber" class="text-danger"></span>
         </div>
         <div style="text-align:center">
             <button type="submit" class="btn btn-default">Sign Up!</button>

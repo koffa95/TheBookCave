@@ -1,5 +1,4 @@
 ﻿// Write your JavaScript code.
-
 $(document).ready(function() {
     $("#bankastraeti").hide();
     $("#kringlan").hide();
@@ -26,8 +25,6 @@ $(document).ready(function() {
     
     }); 
 });
-
-
 
 $( "#location1" ).click(function() {
     if($("#location2").hasClass("active") == true)
@@ -157,5 +154,4 @@ $(".trash").click(function() {
     });
 });
 $(".search").click(function() {
-    var 
-})
+});
